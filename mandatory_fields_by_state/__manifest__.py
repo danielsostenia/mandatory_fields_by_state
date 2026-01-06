@@ -3,7 +3,7 @@
     "summary": "Require fields depending on document state for Sales, Purchase and Invoices.",
     "version": "18.0.1.0.0",
     "category": "Operations",
-    "license": "LGPL-3",
+    "license": "OPL-1",
     "author": "Daniel B",
     "depends": ["base", "sale", "purchase", "account"],
     "data": [
