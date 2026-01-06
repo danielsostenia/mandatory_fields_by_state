@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- ...existing code... -->
+
+    <record id="view_mandatory_fields_rule_list" model="ir.ui.view">
+      <field name="name">mandatory.fields.rule.list</field>
+      <field name="model">mandatory.fields.rule</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="active"/>
+          <field name="name"/>
+          <field name="model_id"/>
+          <field name="state"/>
+          <field name="field_names"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_mandatory_fields_rule_form" model="ir.ui.view">
+      <field name="name">mandatory.fields.rule.form</field>
+      <field name="model">mandatory.fields.rule</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="active"/>
+              <field name="name"/>
+              <field name="model_id"/>
+              <field name="state"/>
+            </group>
+            <group string="Mandatory fields">
+              <field name="field_names" placeholder="partner_ref,date_planned,invoice_user_id"/>
+              <field name="error_message"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_mandatory_fields_rule" model="ir.actions.act_window">
+      <field name="name">Mandatory Fields Rules</field>
+      <field name="res_model">mandatory.fields.rule</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_mandatory_fields_root"
+              name="Mandatory Fields"
+              parent="base.menu_custom"
+              sequence="50"
+              groups="mandatory_fields_by_state.group_mandatory_fields_manager"/>
+
+    <menuitem id="menu_mandatory_fields_rules"
+              name="Rules"
+              parent="menu_mandatory_fields_root"
+              action="action_mandatory_fields_rule"
+              groups="mandatory_fields_by_state.group_mandatory_fields_manager"/>
+
+    <!-- ...existing code... -->
+  </data>
+</odoo>
