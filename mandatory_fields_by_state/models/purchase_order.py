@@ -5,6 +5,5 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     def button_confirm(self):
-        for po in self:
-            self.env["mandatory.fields.rule"].validate_record_for_state(po, "confirmed")
+        self.env["mandatory.fields.rule"]._validate_records(self)
         return super().button_confirm()

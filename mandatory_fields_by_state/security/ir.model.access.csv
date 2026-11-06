@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_mandatory_fields_rule_manager,mandatory.fields.rule manager,model_mandatory_fields_rule,mandatory_fields_by_state.group_mandatory_fields_manager,1,1,1,1
 access_mandatory_fields_rule_user,mandatory.fields.rule user,model_mandatory_fields_rule,,1,0,0,0
-
+access_ir_model_mandatory_fields_manager,ir.model mandatory fields manager,base.model_ir_model,mandatory_fields_by_state.group_mandatory_fields_manager,1,0,0,0
+access_ir_model_fields_mandatory_fields_manager,ir.model.fields mandatory fields manager,base.model_ir_model_fields,mandatory_fields_by_state.group_mandatory_fields_manager,1,0,0,0
