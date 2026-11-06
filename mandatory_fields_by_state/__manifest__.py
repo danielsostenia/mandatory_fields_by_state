@@ -1,7 +1,7 @@
 {
     "name": "Mandatory Fields by Document State",
-    "summary": "Require fields depending on document state for Sales, Purchase and Invoices.",
-    "version": "18.0.1.0.0",
+    "summary": "Require fields before confirming or posting Sales, Purchase and Invoices.",
+    "version": "18.0.2.0.0",
     "category": "Operations",
     "license": "OPL-1",
     "author": "Banica Daniel",

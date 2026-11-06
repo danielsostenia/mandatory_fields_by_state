@@ -6,7 +6,7 @@
         <h2 class="oe_slogan" style="margin:0;">Mandatory Fields by Document State</h2>
         <p class="oe_mt16" style="margin:0;">
           Prevent users from confirming or posting documents when key information is missing.
-          Configure required fields by model and state.
+          Configure required fields by model, optionally limited with a domain.
         </p>
       </div>
     </div>
@@ -15,7 +15,7 @@
 
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <h3>Supported documents (MVP)</h3>
+    <h3>Supported documents</h3>
     <ul class="oe_mt16">
       <li>Sales Orders (<code>sale.order</code>)</li>
       <li>Purchase Orders (<code>purchase.order</code>)</li>
@@ -25,7 +25,7 @@
     <h3 class="oe_mt32">Configuration</h3>
     <ol class="oe_mt16">
       <li>Mandatory Fields - Rules</li>
-      <li>Create a rule and set mandatory field technical names (comma-separated)</li>
+      <li>Create a rule and pick its mandatory fields</li>
       <li>On confirm/post, users will see a clear error when fields are missing</li>
     </ol>
   </div>
