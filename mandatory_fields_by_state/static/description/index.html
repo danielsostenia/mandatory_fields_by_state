@@ -1,32 +1,97 @@
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <div style="display:flex; gap:16px; align-items:center;">
-      <img src="icon.svg" alt="Checklist icon" style="width:64px; height:64px;" />
-      <div>
-        <h2 class="oe_slogan" style="margin:0;">Mandatory Fields by Document State</h2>
-        <p class="oe_mt16" style="margin:0;">
-          Prevent users from confirming or posting documents when key information is missing.
-          Configure required fields by model, optionally limited with a domain.
-        </p>
-      </div>
+<section class="container" style="max-width:960px;margin:auto;font-family:Arial,Helvetica,sans-serif;color:#1f2937">
+  <div style="text-align:center;padding:32px 16px">
+    <h1 style="font-size:34px;margin-bottom:8px">Mandatory Fields by Document State</h1>
+    <p style="font-size:19px;color:#4b5563;margin:0">
+      Stop <b>Sales Orders</b>, <b>Purchase Orders</b> and <b>Invoices</b> from being confirmed
+      or posted while key information is missing &mdash; without a line of code.
+    </p>
+    <p style="margin-top:18px">
+      <span style="background:#e6f4f3;color:#0e5560;padding:6px 14px;border-radius:20px;font-weight:bold">
+        One rule per document type &middot; Clear error message &middot; Set up in 2 minutes
+      </span>
+    </p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:16px;padding:8px 16px">
+    <div style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:10px;padding:18px">
+      <h3 style="margin-top:0">&#9989; Pick the fields</h3>
+      <p>Choose any field of the document &mdash; customer reference, delivery date, payment terms,
+         analytic account, salesperson, custom fields&hellip; &mdash; from a simple list.</p>
+    </div>
+    <div style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:10px;padding:18px">
+      <h3 style="margin-top:0">&#127919; Only where it matters</h3>
+      <p>Limit a rule with a filter: only customer invoices, only one company, only orders above
+         an amount, only a sales team. Everything else works as before.</p>
+    </div>
+    <div style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:10px;padding:18px">
+      <h3 style="margin-top:0">&#128721; Blocked at the right moment</h3>
+      <p>Drafts can be saved freely. The check runs when the order is <b>confirmed</b> or the
+         invoice is <b>posted</b>, and the message lists exactly what is missing.</p>
+    </div>
+    <div style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:10px;padding:18px">
+      <h3 style="margin-top:0">&#9881;&#65039; Safe for automated flows</h3>
+      <p>Scheduled actions, online payments and stock valuation are not interrupted by default.
+         Turn on <i>Enforce on Automated Flows</i> on a rule when you want them checked too.</p>
     </div>
   </div>
-</section>
 
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <h3>Supported documents</h3>
-    <ul class="oe_mt16">
-      <li>Sales Orders (<code>sale.order</code>)</li>
-      <li>Purchase Orders (<code>purchase.order</code>)</li>
-      <li>Invoices / Journal Entries (<code>account.move</code>)</li>
+  <div style="padding:24px 16px">
+    <h2>What the user sees</h2>
+    <div style="border:1px solid #e5e7eb;border-left:5px solid #f0624d;border-radius:10px;padding:16px 18px;max-width:560px;background:#fffaf9">
+      <div style="font-weight:bold;font-size:16px">Validation Error</div>
+      <div style="margin-top:6px;color:#4b5563">Please fill in all mandatory fields before confirming/posting.</div>
+      <div style="margin-top:8px"><b style="color:#c2412f">Missing:</b> Customer Reference, Delivery Date</div>
+    </div>
+    <p style="color:#6b7280;font-size:14px">The first line is your own message, set on each rule.</p>
+
+    <h2>Where the rules apply</h2>
+    <table style="border-collapse:collapse;font-size:15px;width:100%;max-width:720px">
+      <tr style="background:#f3f7f7">
+        <th style="text-align:left;padding:8px 10px;border-bottom:1px solid #e5e7eb">Document</th>
+        <th style="text-align:left;padding:8px 10px;border-bottom:1px solid #e5e7eb">Checked when</th>
+      </tr>
+      <tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0">Sales Order / Quotation</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0">it is confirmed</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0">Purchase Order / RFQ</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0">it is confirmed</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0">Customer Invoice, Vendor Bill, Credit Note</td>
+        <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0">it is posted (including reversals)</td>
+      </tr>
+    </table>
+
+    <h2>Typical rules</h2>
+    <ul style="font-size:16px;line-height:1.8">
+      <li>Vendor bills must have a <b>Bill Reference</b> and a <b>Bill Date</b></li>
+      <li>Sales orders must have a <b>Customer Reference</b> and a <b>Delivery Date</b></li>
+      <li>Purchase orders must have a <b>Buyer</b> and an <b>Expected Arrival</b></li>
+      <li>Customer invoices must have <b>Payment Terms</b></li>
     </ul>
 
-    <h3 class="oe_mt32">Configuration</h3>
-    <ol class="oe_mt16">
-      <li>Mandatory Fields - Rules</li>
-      <li>Create a rule and pick its mandatory fields</li>
-      <li>On confirm/post, users will see a clear error when fields are missing</li>
+    <h2>Setup in 3 steps</h2>
+    <ol style="font-size:16px;line-height:1.8">
+      <li>Add your user to the <b>Mandatory Fields Manager</b> group.</li>
+      <li>Activate developer mode and open <b>Settings &rarr; Technical &rarr; Mandatory Fields &rarr; Rules</b>.</li>
+      <li>Create a rule: document type, mandatory fields, optional filter and message. Done.</li>
     </ol>
+
+    <h2>Features</h2>
+    <ul style="font-size:16px;line-height:1.8">
+      <li>Rules for Sales Orders, Purchase Orders and Invoices / Journal Entries</li>
+      <li>Any field of the document, including custom fields</li>
+      <li>Optional filter (domain) per rule, with a safe default for journal entries</li>
+      <li>Custom error message per rule; the missing fields are always listed</li>
+      <li>Several rules per document type; archive a rule to switch it off</li>
+      <li>Automated flows skipped by default, enforceable per rule</li>
+      <li>Dedicated access group: only managers can change the rules</li>
+    </ul>
+
+    <h2>Requirements</h2>
+    <p>Odoo 18 Community or Enterprise, on Odoo.sh or on-premise, with the Sales, Purchase and
+       Invoicing apps.</p>
   </div>
 </section>
